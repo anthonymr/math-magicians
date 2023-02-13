@@ -9,24 +9,20 @@ const Calculator = () => (
     </div>
     <div className="flexContainer">
       <div className="mainPanel">
-        <div>
-          <OperationsButton label="AC" />
-          <OperationsButton label="+/-" />
-          <OperationsButton label="%" />
-        </div>
-        <div>
-          <NumericButton digit={7} />
-          <NumericButton digit={8} />
-          <NumericButton digit={9} />
-          <NumericButton digit={4} />
-          <NumericButton digit={5} />
-          <NumericButton digit={6} />
-          <NumericButton digit={1} />
-          <NumericButton digit={2} />
-          <NumericButton digit={3} />
-          <NumericButton digit={0} className="bigBtn" />
-          <NumericButton digit="." />
-        </div>
+        <OperationsButton label="AC" />
+        <OperationsButton label="+/-" />
+        <OperationsButton label="%" />
+        <NumericButton digit={7} />
+        <NumericButton digit={8} />
+        <NumericButton digit={9} />
+        <NumericButton digit={4} />
+        <NumericButton digit={5} />
+        <NumericButton digit={6} />
+        <NumericButton digit={1} />
+        <NumericButton digit={2} />
+        <NumericButton digit={3} />
+        <NumericButton digit={0} className="bigBtn" />
+        <NumericButton digit="." />
       </div>
       <div className="rightPanel">
         <OperationsButton label="÷" />
