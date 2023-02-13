@@ -12,7 +12,11 @@ const Calculator = () => {
   const screenRef = useRef(null);
 
   const newScreenValue = (event) => {
-    setNext(event.target.value);
+    const re = /^[0-9]+\.?[0-9]*$/;
+
+    if (event.target.value === '' || re.test(event.target.value)) {
+      setNext(event.target.value);
+    }
   };
 
   const startNewOperation = (buttonLabel) => {
@@ -45,22 +49,26 @@ const Calculator = () => {
   };
 
   const addNewNumber = (digit) => {
-    if (digit !== '.') {
-      setNext(parseFloat(next + digit, 10).toString());
-      return;
-    }
+    const re = /^[0-9]+\.?[0-9]*$/;
 
-    if (next === '') {
-      setNext('0.');
-    } else if (!next.includes('.')) {
-      setNext(next + digit);
+    const newValue = next + digit;
+
+    if (newValue === '' || re.test(newValue)) {
+      setNext(newValue);
     }
   };
 
   return (
     <section>
       <div className="display">
-        <input type="text" ref={screenRef} onChange={newScreenValue} value={next} onClick={cleanScreen} />
+        <input
+          type="text"
+          ref={screenRef}
+          onChange={newScreenValue}
+          value={next}
+          onClick={cleanScreen}
+          pattern="[0-9.]+"
+        />
       </div>
       <div className="flexContainer">
         <div className="mainPanel">
