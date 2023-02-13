@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import NumericButton from './NumericButton';
 import OperationsButton from './OperationButton';
 import calculate from '../logic/calculate';
@@ -9,30 +9,34 @@ const Calculator = () => {
   const [next, setNext] = useState(0);
   const [operation, setOperation] = useState(null);
 
+  const screenRef = useRef(null);
+
   const newScreenValue = (event) => {
     setNext(event.target.value);
   };
 
-  const startNewOperation = (label) => {
+  const startNewOperation = (buttonLabel) => {
     const newValues = calculate({
       total,
       next,
       operation,
-    }, label);
+    }, buttonLabel);
 
     setTotal(newValues.total);
     setNext(newValues.next || '');
     setOperation(newValues.operation);
 
-    if (label === '=') {
+    if (buttonLabel === '=') {
       setNext(newValues.total);
+    } else {
+      screenRef.current.focus();
     }
   };
 
   return (
     <section>
       <div className="display">
-        <input type="number" min="0" onChange={newScreenValue} value={next} />
+        <input type="number" ref={screenRef} onChange={newScreenValue} value={next} />
       </div>
       <div className="flexContainer">
         <div className="mainPanel">
