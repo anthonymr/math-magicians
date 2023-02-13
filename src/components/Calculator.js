@@ -33,10 +33,14 @@ const Calculator = () => {
     }
   };
 
+  const cleanScreen = () => {
+    setNext('');
+  };
+
   return (
     <section>
       <div className="display">
-        <input type="number" ref={screenRef} onChange={newScreenValue} value={next} />
+        <input type="number" ref={screenRef} onChange={newScreenValue} value={next} onClick={cleanScreen} />
       </div>
       <div className="flexContainer">
         <div className="mainPanel">
