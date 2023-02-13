@@ -20,12 +20,6 @@ const Calculator = () => {
   };
 
   const startNewOperation = (buttonLabel) => {
-    console.log({
-      total,
-      next,
-      operation,
-    });
-
     const newValues = calculate({
       total,
       next,
