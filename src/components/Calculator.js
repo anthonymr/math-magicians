@@ -44,6 +44,21 @@ const Calculator = () => {
     }
   };
 
+  const keyUp = (event) => {
+    if (
+      event.key === '/'
+      || event.key === '*'
+      || event.key === '-'
+      || event.key === '+'
+    ) {
+      startNewOperation(event.key);
+    }
+
+    if (event.key === 'Enter') {
+      startNewOperation('=');
+    }
+  };
+
   const cleanScreen = () => {
     setNext('');
   };
@@ -68,6 +83,7 @@ const Calculator = () => {
           value={next}
           onClick={cleanScreen}
           pattern="[0-9.]+"
+          onKeyUp={keyUp}
         />
       </div>
       <div className="flexContainer">
