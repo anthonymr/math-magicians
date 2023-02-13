@@ -37,27 +37,40 @@ const Calculator = () => {
     setNext('');
   };
 
+  const addNewNumber = (digit) => {
+    if (digit !== '.') {
+      setNext(parseFloat(next + digit, 10).toString());
+      return;
+    }
+
+    if (next === '') {
+      setNext('0.');
+    } else if (!next.includes('.')) {
+      setNext(next + digit);
+    }
+  };
+
   return (
     <section>
       <div className="display">
-        <input type="number" ref={screenRef} onChange={newScreenValue} value={next} onClick={cleanScreen} />
+        <input type="text" ref={screenRef} onChange={newScreenValue} value={next} onClick={cleanScreen} />
       </div>
       <div className="flexContainer">
         <div className="mainPanel">
           <OperationsButton label="AC" startNewOperation={startNewOperation} />
           <OperationsButton label="+/-" startNewOperation={startNewOperation} />
           <OperationsButton label="%" startNewOperation={startNewOperation} />
-          <NumericButton digit="7" startNewOperation={startNewOperation} />
-          <NumericButton digit="8" startNewOperation={startNewOperation} />
-          <NumericButton digit="9" startNewOperation={startNewOperation} />
-          <NumericButton digit="4" startNewOperation={startNewOperation} />
-          <NumericButton digit="5" startNewOperation={startNewOperation} />
-          <NumericButton digit="6" startNewOperation={startNewOperation} />
-          <NumericButton digit="1" startNewOperation={startNewOperation} />
-          <NumericButton digit="2" startNewOperation={startNewOperation} />
-          <NumericButton digit="3" startNewOperation={startNewOperation} />
-          <NumericButton digit="0" startNewOperation={startNewOperation} className="bigBtn" />
-          <NumericButton digit="." startNewOperation={startNewOperation} />
+          <NumericButton digit="7" addNewNumber={addNewNumber} />
+          <NumericButton digit="8" addNewNumber={addNewNumber} />
+          <NumericButton digit="9" addNewNumber={addNewNumber} />
+          <NumericButton digit="4" addNewNumber={addNewNumber} />
+          <NumericButton digit="5" addNewNumber={addNewNumber} />
+          <NumericButton digit="6" addNewNumber={addNewNumber} />
+          <NumericButton digit="1" addNewNumber={addNewNumber} />
+          <NumericButton digit="2" addNewNumber={addNewNumber} />
+          <NumericButton digit="3" addNewNumber={addNewNumber} />
+          <NumericButton digit="0" addNewNumber={addNewNumber} className="bigBtn" />
+          <NumericButton digit="." addNewNumber={addNewNumber} />
         </div>
         <div className="rightPanel">
           <OperationsButton label="÷" startNewOperation={startNewOperation} />
