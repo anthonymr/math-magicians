@@ -16,6 +16,12 @@ const Calculator = () => {
   };
 
   const startNewOperation = (buttonLabel) => {
+    console.log({
+      total,
+      next,
+      operation,
+    });
+
     const newValues = calculate({
       total,
       next,
@@ -24,11 +30,12 @@ const Calculator = () => {
 
     setTotal(newValues.total);
     setNext(newValues.next || '');
+
     setOperation(newValues.operation);
 
-    if (buttonLabel === '=') {
+    if (buttonLabel === '=' && newValues.total) {
       setNext(newValues.total);
-    } else {
+    } else if (buttonLabel !== '=') {
       screenRef.current.focus();
     }
   };
