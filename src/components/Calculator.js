@@ -10,6 +10,10 @@ const Calculator = () => {
 
   const screenRef = useRef(null);
 
+  const mainPanelOperations = ['AC', '+/-', '%'];
+  const mainPanelDigits = ['7', '8', '9', '4', '5', '6', '1', '2', '3', '0', '.'];
+  const rightPanelOperations = ['÷', 'x', '-', '+', '='];
+
   const newScreenValue = (event) => {
     const re = /^[0-9]+\.?[0-9]*$/;
 
@@ -81,27 +85,18 @@ const Calculator = () => {
       </div>
       <div className="flexContainer">
         <div className="mainPanel">
-          <OperationsButton label="AC" startNewOperation={startNewOperation} />
-          <OperationsButton label="+/-" startNewOperation={startNewOperation} />
-          <OperationsButton label="%" startNewOperation={startNewOperation} />
-          <OperationsButton label="7" startNewOperation={addNewNumber} />
-          <OperationsButton label="8" startNewOperation={addNewNumber} />
-          <OperationsButton label="9" startNewOperation={addNewNumber} />
-          <OperationsButton label="4" startNewOperation={addNewNumber} />
-          <OperationsButton label="5" startNewOperation={addNewNumber} />
-          <OperationsButton label="6" startNewOperation={addNewNumber} />
-          <OperationsButton label="1" startNewOperation={addNewNumber} />
-          <OperationsButton label="2" startNewOperation={addNewNumber} />
-          <OperationsButton label="3" startNewOperation={addNewNumber} />
-          <OperationsButton label="0" startNewOperation={addNewNumber} className="bigBtn" />
-          <OperationsButton label="." startNewOperation={addNewNumber} />
+          { mainPanelOperations.map((op) => (
+            <OperationsButton label={op} startNewOperation={startNewOperation} key={op} />
+          ))}
+
+          { mainPanelDigits.map((op) => (
+            <OperationsButton label={op} startNewOperation={addNewNumber} key={op} />
+          ))}
         </div>
         <div className="rightPanel">
-          <OperationsButton label="÷" startNewOperation={startNewOperation} />
-          <OperationsButton label="x" startNewOperation={startNewOperation} />
-          <OperationsButton label="-" startNewOperation={startNewOperation} />
-          <OperationsButton label="+" startNewOperation={startNewOperation} />
-          <OperationsButton label="=" startNewOperation={startNewOperation} />
+          { rightPanelOperations.map((op) => (
+            <OperationsButton label={op} startNewOperation={startNewOperation} key={op} />
+          ))}
         </div>
       </div>
     </section>

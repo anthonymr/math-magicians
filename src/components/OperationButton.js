@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 
 const OperationsButton = (props) => {
-  const { label, startNewOperation, className } = props;
+  const { label, startNewOperation } = props;
 
   const onClickHandler = () => {
     startNewOperation(label);
   };
+
+  const className = label === '0' ? 'bigBtn' : '';
 
   return <button type="submit" className={className} onClick={onClickHandler}>{label}</button>;
 };
@@ -13,11 +15,6 @@ const OperationsButton = (props) => {
 OperationsButton.propTypes = {
   label: PropTypes.string.isRequired,
   startNewOperation: PropTypes.func.isRequired,
-  className: PropTypes.string,
-};
-
-OperationsButton.defaultProps = {
-  className: '',
 };
 
 export default OperationsButton;
