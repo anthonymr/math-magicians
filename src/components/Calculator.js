@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react';
-import NumericButton from './NumericButton';
 import OperationsButton from './OperationButton';
 import calculate from '../logic/calculate';
 import './Calculator.css';
@@ -85,17 +84,17 @@ const Calculator = () => {
           <OperationsButton label="AC" startNewOperation={startNewOperation} />
           <OperationsButton label="+/-" startNewOperation={startNewOperation} />
           <OperationsButton label="%" startNewOperation={startNewOperation} />
-          <NumericButton digit="7" addNewNumber={addNewNumber} />
-          <NumericButton digit="8" addNewNumber={addNewNumber} />
-          <NumericButton digit="9" addNewNumber={addNewNumber} />
-          <NumericButton digit="4" addNewNumber={addNewNumber} />
-          <NumericButton digit="5" addNewNumber={addNewNumber} />
-          <NumericButton digit="6" addNewNumber={addNewNumber} />
-          <NumericButton digit="1" addNewNumber={addNewNumber} />
-          <NumericButton digit="2" addNewNumber={addNewNumber} />
-          <NumericButton digit="3" addNewNumber={addNewNumber} />
-          <NumericButton digit="0" addNewNumber={addNewNumber} className="bigBtn" />
-          <NumericButton digit="." addNewNumber={addNewNumber} />
+          <OperationsButton label="7" startNewOperation={addNewNumber} />
+          <OperationsButton label="8" startNewOperation={addNewNumber} />
+          <OperationsButton label="9" startNewOperation={addNewNumber} />
+          <OperationsButton label="4" startNewOperation={addNewNumber} />
+          <OperationsButton label="5" startNewOperation={addNewNumber} />
+          <OperationsButton label="6" startNewOperation={addNewNumber} />
+          <OperationsButton label="1" startNewOperation={addNewNumber} />
+          <OperationsButton label="2" startNewOperation={addNewNumber} />
+          <OperationsButton label="3" startNewOperation={addNewNumber} />
+          <OperationsButton label="0" startNewOperation={addNewNumber} className="bigBtn" />
+          <OperationsButton label="." startNewOperation={addNewNumber} />
         </div>
         <div className="rightPanel">
           <OperationsButton label="÷" startNewOperation={startNewOperation} />
