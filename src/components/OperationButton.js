@@ -7,7 +7,9 @@ const OperationsButton = (props) => {
     startNewOperation(label);
   };
 
-  return <button type="submit" onClick={onClickHandler}>{label}</button>;
+  const className = label === '0' ? 'bigBtn' : '';
+
+  return <button type="submit" className={className} onClick={onClickHandler}>{label}</button>;
 };
 
 OperationsButton.propTypes = {
