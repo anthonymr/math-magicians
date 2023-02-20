@@ -54,7 +54,3 @@ button:hover {
 .bigBtn {
   width: calc(100% / 3 * 2) !important;
 }
-
-.error {
-  color: red;
-}
