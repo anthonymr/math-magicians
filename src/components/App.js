@@ -1,9 +1,11 @@
-import Calculator from './Calculator';
+import Router from '../Router';
+import Header from './Header';
 
 function App() {
   return (
     <main>
-      <Calculator />
+      <Header />
+      <Router />
     </main>
   );
 }
