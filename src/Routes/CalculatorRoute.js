@@ -1,10 +1,10 @@
 import React from 'react';
-import Calculator from '../components/Calculator';
+import CalculatorWrapper from '../components/CalculatorWrapper';
 
 function CalculatorRoute() {
   return (
     <section>
-      <Calculator />
+      <CalculatorWrapper />
     </section>
   );
 }

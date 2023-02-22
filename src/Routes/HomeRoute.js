@@ -1,9 +1,10 @@
 import React from 'react';
+import Home from '../components/Home';
 
 function HomeRoute() {
   return (
     <section>
-      <h1>This is the home page</h1>
+      <Home />
     </section>
   );
 }
