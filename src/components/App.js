@@ -1,9 +1,9 @@
-import Calculator from './Calculator';
+import Router from '../Router';
 
 function App() {
   return (
     <main>
-      <Calculator />
+      <Router />
     </main>
   );
 }
