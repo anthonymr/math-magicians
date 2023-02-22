@@ -1,30 +1,30 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
 }
 
 .logo {
-    font-size: 30px;
-    font-weight: 600;
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .logo > span {
-    color: rgb(82, 82, 173);
+  color: rgb(82, 82, 173);
 }
 
 .navWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navWrapper > a {
-    text-align: center;
-    padding: 0 20px;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .navWrapper > a:nth-child(2) {
-    border-left: 1px solid rgb(215, 215, 215);
-    border-right: 1px solid rgb(215, 215, 215);
+  border-left: 1px solid rgb(215, 215, 215);
+  border-right: 1px solid rgb(215, 215, 215);
 }

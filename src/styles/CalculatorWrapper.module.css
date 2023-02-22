@@ -1,17 +1,17 @@
 .wrapper {
-    width: 100%;
-    padding: 0 40px;
-    display: flex;
+  width: 100%;
+  padding: 0 40px;
+  display: flex;
 }
 
 .wrapper > div {
-    padding: 10px 0;
+  padding: 10px 0;
 }
 
 .wrapper > div:first-child {
-    width: calc(100% - 500px);
+  width: calc(100% - 500px);
 }
 
 .wrapper > div:last-child {
-    width: 500px;
+  width: 500px;
 }
