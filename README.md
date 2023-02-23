@@ -47,7 +47,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo](https://anthonymr.github.io/math-magicians) [Coming soon]
+- [Live Demo](https://math-magicians-6ly5.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
